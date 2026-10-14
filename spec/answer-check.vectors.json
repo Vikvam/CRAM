@@ -1,0 +1,320 @@
+{
+  "spec": "memo.answer-check",
+  "version": 1,
+  "note": "See answer-check.md. Every implementation must pass these.",
+  "vectors": [
+    {
+      "answer": "Russia",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "identical"
+    },
+    {
+      "answer": "  russia ",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "case and surrounding whitespace are normalised"
+    },
+    {
+      "answer": "office  worker",
+      "expected": "office worker",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "runs of whitespace collapse"
+    },
+    {
+      "answer": "Nice to meet you",
+      "expected": "Nice to meet you.",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "trailing punctuation is dropped"
+    },
+    {
+      "answer": "Nice to meet you!",
+      "expected": "Nice to meet you.",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "any trailing punctuation"
+    },
+    {
+      "answer": "**Russia**",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "markdown markup is not part of the answer"
+    },
+    {
+      "answer": "$x^2$",
+      "expected": "x^2",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "katex delimiters are stripped"
+    },
+    {
+      "answer": "",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "an empty answer is never almost"
+    },
+    {
+      "answer": "   ",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "whitespace only is empty"
+    },
+    {
+      "answer": "what",
+      "expected": "what, which",
+      "accepted": [
+        "what",
+        "which"
+      ],
+      "outcome": "correct",
+      "why": "an explicit accepted answer"
+    },
+    {
+      "answer": "which",
+      "expected": "what, which",
+      "accepted": [
+        "what",
+        "which"
+      ],
+      "outcome": "correct",
+      "why": "either meaning counts"
+    },
+    {
+      "answer": "what, which",
+      "expected": "what, which",
+      "accepted": [
+        "what",
+        "which"
+      ],
+      "outcome": "correct",
+      "why": "the displayed form still counts"
+    },
+    {
+      "answer": "me",
+      "expected": "I/me (honorific)",
+      "accepted": [
+        "I",
+        "me"
+      ],
+      "outcome": "correct",
+      "why": "split gloss"
+    },
+    {
+      "answer": "honorific",
+      "expected": "I/me (honorific)",
+      "accepted": [
+        "I",
+        "me"
+      ],
+      "outcome": "wrong",
+      "why": "not one of the meanings"
+    },
+    {
+      "answer": "what",
+      "expected": "what, which",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "without an accept list only the displayed text counts"
+    },
+    {
+      "answer": "cafe",
+      "expected": "café",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "NFD: the accent is one unit",
+      "lang": "fr"
+    },
+    {
+      "answer": "Russa",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one deletion"
+    },
+    {
+      "answer": "Russsia",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one insertion"
+    },
+    {
+      "answer": "Rusisa",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "a transposition counts as one"
+    },
+    {
+      "answer": "Rusia",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one deletion in a six-letter word"
+    },
+    {
+      "answer": "Rsia",
+      "expected": "Russia",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "two edits, and the expected answer is short"
+    },
+    {
+      "answer": "intarnational studant",
+      "expected": "international student",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "two edits, but the expected answer is longer than 8 units"
+    },
+    {
+      "answer": "intarnatinal studant",
+      "expected": "international student",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "three edits"
+    },
+    {
+      "answer": "university studen",
+      "expected": "university student",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one deletion in a long answer"
+    },
+    {
+      "answer": "학샘",
+      "expected": "학생",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "NFD: one jamo differs",
+      "lang": "ko"
+    },
+    {
+      "answer": "러시안",
+      "expected": "러시아",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one jamo added",
+      "lang": "ko"
+    },
+    {
+      "answer": "중구",
+      "expected": "중국",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one jamo deleted",
+      "lang": "ko"
+    },
+    {
+      "answer": "일본",
+      "expected": "일본",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "identical hangul",
+      "lang": "ko"
+    },
+    {
+      "answer": "미국",
+      "expected": "한국",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "a different word, not a typo",
+      "lang": "ko"
+    },
+    {
+      "answer": "만나서 방가워요",
+      "expected": "만나서 반가워요",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one jamo in a long phrase",
+      "lang": "ko"
+    },
+    {
+      "answer": "N이가",
+      "expected": "N이/가",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "the slash is inside the answer, so removing it is one edit",
+      "lang": "ko"
+    },
+    {
+      "answer": "f(x) = 2x",
+      "expected": "f(x) = 2x",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "maths compares literally"
+    },
+    {
+      "answer": "f(x) = 2y",
+      "expected": "f(x) = 2x",
+      "accepted": [],
+      "outcome": "almost",
+      "why": "one character in a long expression"
+    },
+    {
+      "answer": "2x",
+      "expected": "f(x) = 2x",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "far more than two edits"
+    },
+    {
+      "answer": "whcih",
+      "expected": "what, which",
+      "accepted": [
+        "what",
+        "which"
+      ],
+      "outcome": "almost",
+      "why": "a transposition against one of the accepted answers"
+    },
+    {
+      "answer": "-씨",
+      "expected": "–씨",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "a typed hyphen matches the en dash the book prints"
+    },
+    {
+      "answer": "–씨",
+      "expected": "-씨",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "and the same the other way round"
+    },
+    {
+      "answer": "well-known",
+      "expected": "well‑known",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "a non-breaking hyphen is still a hyphen"
+    },
+    {
+      "answer": "-5",
+      "expected": "−5",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "the minus sign folds too"
+    },
+    {
+      "answer": "co\u00adoperate",
+      "expected": "cooperate",
+      "accepted": [],
+      "outcome": "correct",
+      "why": "a soft hyphen is invisible, so it is removed rather than folded"
+    },
+    {
+      "answer": "コ-ヒ-",
+      "expected": "コーヒー",
+      "accepted": [],
+      "outcome": "wrong",
+      "why": "U+30FC is a letter in Japanese, not a dash, so it is never folded"
+    }
+  ]
+}
