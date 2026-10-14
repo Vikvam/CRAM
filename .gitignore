@@ -1,0 +1,19 @@
+# Your collection, its photos and exports: personal, and the photos are someone else's pages.
+/data/
+
+# The database, uploads and backups (backend/.gitignore also covers var/).
+/backend/var/
+
+# Secrets.
+.env
+.env.*
+
+# Editors and OS.
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Importers kept on this machine (backend/src/memo/importers/local.py).
+/backend/importers.local/
