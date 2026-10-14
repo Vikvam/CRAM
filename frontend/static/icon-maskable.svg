@@ -1,0 +1,10 @@
+<!-- The same mark, drawn inside the safe zone a maskable icon must keep clear:
+     a launcher may crop to a circle, so nothing but background is within 20%
+     of any edge. The plain icon.svg is the one with the artwork edge to edge. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+	<rect width="64" height="64" fill="#2c3a66" />
+	<g transform="translate(32 32) scale(0.6) translate(-32 -32)">
+		<rect x="17" y="20" width="26" height="19" rx="1" fill="#faf8f2" opacity=".45" />
+		<rect x="22" y="26" width="26" height="19" rx="1" fill="#faf8f2" />
+	</g>
+</svg>

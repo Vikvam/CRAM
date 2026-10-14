@@ -1,0 +1,11 @@
+{
+  "name": "@memo/answer-check",
+  "version": "0.1.0",
+  "description": "The one answer checker (PLAN 5). Spec: ../../../spec/answer-check.md",
+  "type": "module",
+  "main": "index.ts",
+  "exports": { ".": "./index.ts" },
+  "scripts": { "test": "node --test test.ts" },
+  "license": "UNLICENSED",
+  "private": true
+}

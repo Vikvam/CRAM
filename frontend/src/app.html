@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<!-- Kept in step with the skin and scheme below, because the app's own
+		     setting may disagree with the system and the browser's own chrome
+		     should not. -->
+		<meta name="theme-color" id="theme-color" content="#faf8f2" />
+		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
+		<link rel="icon" href="%sveltekit.assets%/icon.svg" type="image/svg+xml" />
+		<!-- iOS reads none of the manifest's icons, and synthesises a screenshot
+		     without this one. The title is what sits under the home-screen icon. -->
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="CRAM" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<!-- `default`, not `black-translucent`: the app draws its own background
+		     and must not slide underneath the status bar. -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta
+			name="description"
+			content="Cards you make from your own pages, practised until they stick."
+		/>
+		<title>CRAM</title>
+		<script>
+			// Before the first paint, so the page never flashes the other look or
+			// the other size. Paper, light and 100% are the fallbacks if anything
+			// here fails; the app's own settings have to be able to disagree with
+			// the system, so they win when set. Keep the colours and the
+			// percentages in step with `$lib/theme.svelte.ts`.
+			(function () {
+				var root = document.documentElement;
+				var theme = 'system';
+				var skin = 'paper';
+				var size = { compact: 90, default: 100, large: 115, larger: 130 };
+				var scale = 'default';
+				try {
+					theme = localStorage.getItem('memo.theme') || 'system';
+					skin = localStorage.getItem('memo.skin') === 'ink' ? 'ink' : 'paper';
+					scale = localStorage.getItem('memo.scale') || 'default';
+				} catch (e) {
+					/* private mode — the system's choice, then */
+				}
+				// A percentage, so the device's own text size still multiplies in.
+				root.style.fontSize = (size[scale] || 100) + '%';
+				var dark =
+					theme === 'dark' ||
+					(theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				root.dataset.theme = dark ? 'dark' : 'light';
+				root.dataset.skin = skin;
+				var bar = { paper: { light: '#faf8f2', dark: '#14130f' }, ink: { light: '#edece7', dark: '#0b0b0c' } };
+				var meta = document.getElementById('theme-color');
+				if (meta) meta.setAttribute('content', bar[skin][dark ? 'dark' : 'light']);
+			})();
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

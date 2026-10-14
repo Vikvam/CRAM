@@ -1,0 +1,912 @@
+/**
+ * The token layer: one layout, two skins, two schemes.
+ *
+ * Structure — space, targets, timings, the page frame — is shared by both
+ * skins and never varies. What a skin changes is colour, type and edge:
+ *
+ *   paper  cream ground, a serif for what you read, hairline rules, light
+ *          weights, an indigo used about once per screen
+ *   ink    flat ground, one heavy sans, 2px rules, big weights, a cobalt
+ *          used generously
+ *
+ * Neither skin has cards. A section is a rule, a small label and a lot of
+ * air, because the fastest thing to read is the thing with least around it.
+ *
+ * Both `data-skin` and `data-theme` are resolved in `app.html` before the
+ * first paint and stored per device, so the phone and the laptop can differ.
+ */
+
+:root {
+	/* ── structure: shared, never skinned ────────────────────────────────── */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+	--space-7: 3rem;
+	--space-8: 4rem;
+	/* The air between one section of a page and the next. */
+	--space-section: var(--space-7);
+
+	/* One multiplier for the whole scale, so a wider screen keeps the exact
+	   proportions between the sizes. Changed once, just below the palettes. */
+	--type-scale: 1;
+	--text-xs: calc(0.75rem * var(--type-scale));
+	--text-sm: calc(0.875rem * var(--type-scale));
+	--text-base: calc(1rem * var(--type-scale));
+	--text-md: calc(1.125rem * var(--type-scale));
+	--text-lg: calc(1.375rem * var(--type-scale));
+	--text-xl: calc(1.75rem * var(--type-scale));
+	--text-2xl: calc(2.25rem * var(--type-scale));
+	--text-3xl: calc(3rem * var(--type-scale));
+	--text-display: clamp(calc(2.75rem * var(--type-scale)), 12vw, calc(4.25rem * var(--type-scale)));
+
+	--leading-tight: 1.1;
+	--leading-snug: 1.35;
+	--leading: 1.55;
+
+	/* In rem, so the size setting carries them with everything else — but never
+	   below what a thumb needs, however small the words are set. */
+	--tap: max(44px, 3rem);
+	--tap-sm: max(36px, 2.5rem);
+	/* Roughly the sticky header, and only used to keep what you jump to from
+	   landing underneath it; erring large costs nothing but a little air. */
+	--nav-h: 4rem;
+	--page-max: 51.25rem;
+	--reading-max: 40rem;
+	--gap: var(--space-4);
+
+	--dur-fast: 100ms;
+	--dur: 160ms;
+	--dur-slow: 280ms;
+	--ease: cubic-bezier(0.2, 0, 0.2, 1);
+	--ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+	/* A chip follows whatever edge the skin has; no element is a pill. */
+	--radius-pill: var(--radius);
+
+	--z-sticky: 10;
+	--z-nav: 20;
+	--z-overlay: 60;
+
+	--font-ui: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Noto Sans KR',
+		'Apple SD Gothic Neo', sans-serif;
+}
+
+@media (min-width: 641px) {
+	:root {
+		--space-section: var(--space-8);
+	}
+}
+
+/* ── skin: paper ─────────────────────────────────────────────────────────── */
+:root,
+:root[data-skin='paper'] {
+	--font-read: 'Noto Serif', 'Noto Serif CJK KR', ui-serif, Georgia, 'Times New Roman', serif;
+
+	--radius: 2px;
+	--radius-sm: 2px;
+	--border: 1px;
+	--border-strong: 2px;
+
+	--weight-body: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+	/* How a heading carries itself in this skin. */
+	--heading-weight: 400;
+	--heading-case: none;
+	--heading-tracking: -0.015em;
+	--label-weight: 500;
+	--label-tracking: 0.14em;
+	--numeral-weight: 400;
+}
+
+:root,
+:root[data-skin='paper']:not([data-theme='dark']) {
+	--bg: #faf8f2;
+	--surface: #f3f0e7;
+	--sunken: #e9e3d4;
+	--text: #1a1813;
+	--muted: #6a6356;
+	--line: #c6bda8;
+	--line-soft: #e1dac8;
+	--accent: #2c3a66;
+	--accent-soft: #e3e6f1;
+	--accent-ink: #253156;
+	--on-accent: #fdfbf6;
+	--good: #2f5f3f;
+	--good-soft: #e3ece4;
+	--on-good: #ffffff;
+	--almost: #846014;
+	--almost-soft: #f3ead2;
+	--on-almost: #ffffff;
+	--bad: #8a2f2a;
+	--bad-soft: #f3e2e0;
+	--on-bad: #ffffff;
+	--mastered: #2b2720;
+	--known: #655d4d;
+	--learning: #9a9080;
+	--unseen: #ddd6c4;
+	--shadow-lifted: 0 10px 50px rgb(26 24 19 / 0.22);
+	--overlay: rgb(26 24 19 / 0.45);
+	color-scheme: light;
+}
+
+:root[data-skin='paper'][data-theme='dark'] {
+	--bg: #14130f;
+	--surface: #1d1b16;
+	--sunken: #0c0b09;
+	--text: #ebe6da;
+	--muted: #9a9384;
+	--line: #3b382e;
+	--line-soft: #272520;
+	--accent: #95a4d6;
+	--accent-soft: #1d2234;
+	--accent-ink: #adb8e2;
+	--on-accent: #101320;
+	--good: #80af8d;
+	--good-soft: #1b2820;
+	--on-good: #061009;
+	--almost: #c8a455;
+	--almost-soft: #2e2715;
+	--on-almost: #161104;
+	--bad: #d98a84;
+	--bad-soft: #301c1a;
+	--on-bad: #1a0806;
+	--mastered: #e0d9c7;
+	--known: #ada48f;
+	--learning: #6e6657;
+	--unseen: #332f27;
+	--shadow-lifted: 0 10px 50px rgb(0 0 0 / 0.65);
+	--overlay: rgb(0 0 0 / 0.6);
+	color-scheme: dark;
+}
+
+/* ── skin: ink ───────────────────────────────────────────────────────────── */
+:root[data-skin='ink'] {
+	--font-read: var(--font-ui);
+
+	--radius: 4px;
+	--radius-sm: 4px;
+	--border: 2px;
+	--border-strong: 3px;
+
+	--weight-body: 400;
+	--weight-medium: 600;
+	--weight-semibold: 700;
+	--weight-bold: 800;
+	--heading-weight: 800;
+	--heading-case: uppercase;
+	--heading-tracking: -0.03em;
+	--label-weight: 800;
+	--label-tracking: 0.1em;
+	--numeral-weight: 800;
+}
+
+:root[data-skin='ink']:not([data-theme='dark']) {
+	--bg: #edece7;
+	--surface: #ffffff;
+	--sunken: #d9d6cd;
+	--text: #111111;
+	--muted: #56544e;
+	--line: #111111;
+	--line-soft: #c3c0b7;
+	--accent: #1f3fd8;
+	--accent-soft: #dde2fb;
+	--accent-ink: #1a34b0;
+	--on-accent: #ffffff;
+	--good: #0f7a46;
+	--good-soft: #d6eee1;
+	--on-good: #ffffff;
+	--almost: #8a5a08;
+	--almost-soft: #f7e8c8;
+	--on-almost: #ffffff;
+	--bad: #be271f;
+	--bad-soft: #fadedc;
+	--on-bad: #ffffff;
+	--mastered: #1f3fd8;
+	--known: #5c74e4;
+	--learning: #9fb0f2;
+	--unseen: #d9d6cd;
+	--shadow-lifted: none;
+	--overlay: rgb(17 17 17 / 0.6);
+	color-scheme: light;
+}
+
+:root[data-skin='ink'][data-theme='dark'] {
+	--bg: #0b0b0c;
+	--surface: #171719;
+	--sunken: #050506;
+	--text: #f5f5f2;
+	--muted: #9d9c96;
+	--line: #f5f5f2;
+	--line-soft: #35353a;
+	--accent: #5e80ff;
+	--accent-soft: #19204a;
+	--accent-ink: #7f9bff;
+	--on-accent: #06091f;
+	--good: #27b36f;
+	--good-soft: #0e2b1d;
+	--on-good: #04140b;
+	--almost: #e0a62c;
+	--almost-soft: #2e2410;
+	--on-almost: #1a1304;
+	--bad: #f2655a;
+	--bad-soft: #341715;
+	--on-bad: #1a0605;
+	--mastered: #9db4ff;
+	--known: #5e80ff;
+	--learning: #475694;
+	--unseen: #2a2a2f;
+	--shadow-lifted: none;
+	--overlay: rgb(0 0 0 / 0.72);
+	color-scheme: dark;
+}
+
+/* Before the inline script runs — and if it ever cannot. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-skin]):not([data-theme]) {
+		--bg: #14130f;
+		--surface: #1d1b16;
+		--sunken: #0c0b09;
+		--text: #ebe6da;
+		--muted: #9a9384;
+		--line: #3b382e;
+		--line-soft: #272520;
+		--accent: #95a4d6;
+		--accent-soft: #1d2234;
+		--accent-ink: #adb8e2;
+		--on-accent: #101320;
+		--good: #80af8d;
+		--good-soft: #1b2820;
+		--on-good: #061009;
+		--almost: #c8a455;
+		--almost-soft: #2e2715;
+		--on-almost: #161104;
+		--bad: #d98a84;
+		--bad-soft: #301c1a;
+		--on-bad: #1a0806;
+		--mastered: #e0d9c7;
+		--known: #ada48f;
+		--learning: #6e6657;
+		--unseen: #332f27;
+		--shadow-lifted: 0 10px 50px rgb(0 0 0 / 0.65);
+		--overlay: rgb(0 0 0 / 0.6);
+		color-scheme: dark;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root:not([data-theme='dark']) {
+		--muted: #3a352c;
+		--line-soft: #a9a08b;
+	}
+
+	:root[data-theme='dark'] {
+		--muted: #cdc8ba;
+		--line-soft: #5c5950;
+	}
+}
+
+/* Wider than full HD is a desk monitor or a scaled high-DPI panel, read from
+   further away than a phone is. The whole type scale grows by an eighth, in
+   proportion, so nothing in the hierarchy is squashed. Deliberately *only* the
+   type: the space scale and the 820px column stay where they are, so a line of
+   text simply holds fewer words rather than running longer. `--type-scale` is
+   plain `:root`, as is its default, so this needs no specificity games. */
+@media (min-width: 1921px) {
+	:root {
+		--type-scale: 1.25;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	/* The size setting is a percentage on this element (`app.html`), so every
+	   rem below — text, spacing, gaps, tap targets — follows from it, and the
+	   device's own accessibility text size still multiplies in. */
+	scroll-padding-top: var(--nav-h);
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-read);
+	font-weight: var(--weight-body);
+	line-height: var(--leading);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Body copy comes from the scale like everything else — but on `body`, never on
+   `html`: the tokens are rem, so sizing the root would scale them a second time.
+   Leaving `html` alone also leaves the reader's own browser font size alone. */
+body {
+	font-size: var(--text-base);
+}
+
+/* ── type ────────────────────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-read);
+	font-weight: var(--heading-weight);
+	text-transform: var(--heading-case);
+	letter-spacing: var(--heading-tracking);
+	line-height: var(--leading-tight);
+	margin: 0 0 var(--space-3);
+}
+
+h1 {
+	font-size: var(--text-2xl);
+}
+
+h2 {
+	font-size: var(--text-lg);
+}
+
+h3 {
+	font-size: var(--text-md);
+}
+
+@media (min-width: 641px) {
+	h1 {
+		font-size: var(--text-3xl);
+	}
+}
+
+p {
+	margin: 0 0 var(--space-3);
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: var(--accent-ink);
+	text-underline-offset: 3px;
+}
+
+code {
+	font-family: ui-monospace, 'Noto Sans Mono', monospace;
+	font-size: 0.88em;
+	padding: 0.05em 0.3em;
+	border-radius: var(--radius-sm);
+	background: var(--surface);
+}
+
+/* The one typographic device the whole app shares: a small tracked label,
+   for section headings and field names. Never for content. */
+.label,
+.card > h2,
+legend {
+	font-family: var(--font-ui);
+	font-size: var(--text-xs);
+	font-weight: var(--label-weight);
+	letter-spacing: var(--label-tracking);
+	text-transform: uppercase;
+	color: var(--muted);
+	margin: 0 0 var(--space-3);
+}
+
+/* A number you are meant to read across the room. */
+.figure {
+	font-family: var(--font-read);
+	font-size: var(--text-2xl);
+	font-weight: var(--numeral-weight);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: var(--heading-tracking);
+	line-height: 1;
+}
+
+/* ── controls ────────────────────────────────────────────────────────────── */
+
+button,
+input,
+select,
+textarea {
+	font-family: var(--font-ui);
+	font-size: var(--text-sm);
+	color: inherit;
+}
+
+button,
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	min-height: var(--tap);
+	padding: 0 var(--space-4);
+	border-radius: var(--radius-sm);
+	border: var(--border) solid var(--line);
+	background: transparent;
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--text);
+	white-space: nowrap;
+	font-weight: var(--weight-semibold);
+	transition:
+		background-color var(--dur-fast) var(--ease),
+		border-color var(--dur-fast) var(--ease),
+		color var(--dur-fast) var(--ease);
+}
+
+button:hover:not(:disabled),
+.button:hover {
+	background: var(--surface);
+}
+
+button:active:not(:disabled),
+.button:active {
+	translate: 0 1px;
+}
+
+button:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+button.primary,
+.button.primary {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: var(--on-accent);
+	font-weight: var(--weight-bold);
+}
+
+button.primary:hover:not(:disabled),
+.button.primary:hover {
+	background: var(--accent-ink);
+	border-color: var(--accent-ink);
+}
+
+button.ghost {
+	border-color: transparent;
+	color: var(--muted);
+}
+
+button.ghost:hover:not(:disabled) {
+	color: var(--text);
+	background: var(--surface);
+}
+
+button.danger,
+.button.danger {
+	color: var(--bad);
+	border-color: var(--line-soft);
+}
+
+button.danger:hover:not(:disabled) {
+	background: var(--bad);
+	border-color: var(--bad);
+	color: var(--on-bad);
+}
+
+button.small,
+.button.small {
+	min-height: var(--tap-sm);
+	padding: 0 var(--space-3);
+	font-size: var(--text-xs);
+	font-weight: var(--label-weight);
+	letter-spacing: var(--label-tracking);
+	text-transform: uppercase;
+}
+
+button.link {
+	min-height: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--accent-ink);
+	font-family: var(--font-read);
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: 0;
+	text-transform: none;
+	text-decoration: underline;
+	white-space: normal;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='search'],
+select,
+textarea {
+	width: 100%;
+	min-height: var(--tap);
+	padding: var(--space-2) var(--space-3);
+	border-radius: var(--radius-sm);
+	border: var(--border) solid var(--line-soft);
+	background: var(--surface);
+	transition: border-color var(--dur-fast) var(--ease);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+	border-color: var(--line);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	border-color: var(--accent);
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: var(--muted);
+	opacity: 1;
+}
+
+textarea {
+	line-height: var(--leading-snug);
+	resize: vertical;
+}
+
+/* A search box is a text box here: no native rounding, and no second clear button beside our own. */
+input[type='search'] {
+	appearance: none;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+	appearance: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	accent-color: var(--accent);
+	width: 1.15rem;
+	height: 1.15rem;
+	min-height: 0;
+	border: 0;
+}
+
+:focus-visible {
+	outline: var(--border-strong) solid var(--accent);
+	outline-offset: 3px;
+}
+
+/* ── sections, not cards ─────────────────────────────────────────────────── */
+
+/* `.card` is kept as the name every screen already uses, but it is no longer
+   a card: a rule above, a label, and room to breathe. */
+.card {
+	background: transparent;
+	border: 0;
+	border-top: var(--border) solid var(--line);
+	border-radius: 0;
+	box-shadow: none;
+	padding: var(--space-4) 0 0;
+}
+
+.card.flush {
+	padding-top: var(--space-3);
+}
+
+.stack > .card + .card {
+	margin-top: var(--space-section);
+}
+
+/* Something genuinely raised off the page: a dialog, a photo, a well. */
+.panel {
+	background: var(--surface);
+	border: var(--border) solid var(--line-soft);
+	border-radius: var(--radius);
+	padding: var(--space-4);
+}
+
+.pill {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	padding: 0;
+	font-family: var(--font-ui);
+	font-size: var(--text-xs);
+	font-weight: var(--label-weight);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+	white-space: nowrap;
+}
+
+.pill.ready {
+	color: var(--accent-ink);
+}
+
+.pill.warn {
+	color: var(--almost);
+}
+
+.pill.bad {
+	color: var(--bad);
+}
+
+.error {
+	padding: var(--space-3) 0 var(--space-3) var(--space-3);
+	border-left: var(--border-strong) solid var(--bad);
+	color: var(--bad);
+}
+
+/* ── layout utilities ────────────────────────────────────────────────────── */
+
+.stack > * + * {
+	margin-top: var(--gap);
+}
+
+.stack.tight > * + * {
+	margin-top: var(--space-2);
+}
+
+.row {
+	display: flex;
+	gap: var(--space-3);
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.row.tight {
+	gap: var(--space-2);
+}
+
+.spread {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: var(--space-3);
+	flex-wrap: wrap;
+}
+
+.wide {
+	width: 100%;
+}
+
+.muted {
+	color: var(--muted);
+}
+
+.small {
+	font-size: var(--text-sm);
+	line-height: var(--leading-snug);
+}
+
+.tnum {
+	font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* ── composites ──────────────────────────────────────────────────────────── */
+
+.choice {
+	display: flex;
+	gap: var(--space-3);
+	align-items: flex-start;
+	min-height: var(--tap);
+	padding: var(--space-3) 0;
+	border: 0;
+	border-top: var(--border) solid var(--line-soft);
+	cursor: pointer;
+}
+
+.choice:has(input:checked) {
+	color: var(--text);
+	font-weight: var(--weight-medium);
+}
+
+.choice:has(:focus-visible) {
+	outline: var(--border-strong) solid var(--accent);
+	outline-offset: 2px;
+}
+
+.choice input {
+	margin-top: 0.25rem;
+	flex: 0 0 auto;
+}
+
+.segmented {
+	display: flex;
+	/* Four labels at the largest size do not fit a phone in one row, and a
+	   clipped choice is an unusable one: let it take a second row instead. */
+	flex-wrap: wrap;
+	gap: 0 var(--space-4);
+	border-bottom: var(--border) solid var(--line-soft);
+}
+
+.segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: var(--tap);
+	/* A short word must still be a target you can hit. */
+	min-width: var(--tap);
+	padding: 0 var(--space-2) var(--space-2);
+	margin-bottom: calc(-1 * var(--border));
+	border-bottom: var(--border-strong) solid transparent;
+	font-family: var(--font-ui);
+	font-size: var(--text-xs);
+	font-weight: var(--label-weight);
+	letter-spacing: var(--label-tracking);
+	text-transform: uppercase;
+	color: var(--muted);
+	cursor: pointer;
+}
+
+.segment:has(input:checked) {
+	color: var(--text);
+	border-bottom-color: var(--text);
+}
+
+.segment:has(:focus-visible) {
+	outline: var(--border-strong) solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* Scoped to the anchor: `Sheet.svelte` calls its gloss column `.back` too. */
+a.back {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	min-height: var(--tap-sm);
+	font-family: var(--font-ui);
+	font-size: var(--text-xs);
+	font-weight: var(--label-weight);
+	letter-spacing: var(--label-tracking);
+	text-transform: uppercase;
+	color: var(--muted);
+	text-decoration: none;
+}
+
+a.back:hover {
+	color: var(--text);
+}
+
+.skeleton {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius-sm);
+	background: var(--surface);
+}
+
+.skeleton::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	translate: -100% 0;
+	background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--bg) 75%, transparent), transparent);
+	animation: sweep 1.4s var(--ease) infinite;
+}
+
+@keyframes sweep {
+	to {
+		translate: 100% 0;
+	}
+}
+
+dialog {
+	max-width: min(30rem, calc(100vw - var(--space-6)));
+	padding: var(--space-6);
+	border: var(--border) solid var(--line);
+	border-radius: var(--radius);
+	background: var(--bg);
+	color: var(--text);
+	box-shadow: var(--shadow-lifted);
+}
+
+dialog::backdrop {
+	background: var(--overlay);
+}
+
+[lang='ko'] {
+	word-break: keep-all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 1ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	button:active:not(:disabled),
+	.button:active {
+		translate: none;
+	}
+}
+
+/* Printing a study sheet (PLAN 6, phase 4): the lesson, on paper, and nothing
+   else. Every colour token is forced, including the solid feedback colours,
+   so no skin can print light text on a light block. */
+@media print {
+	:root,
+	:root[data-skin='paper']:not([data-theme='dark']),
+	:root[data-skin='ink']:not([data-theme='dark']),
+	:root[data-skin='paper'][data-theme='dark'],
+	:root[data-skin='ink'][data-theme='dark'] {
+		--bg: #ffffff;
+		--surface: #ffffff;
+		--sunken: #ffffff;
+		--text: #000000;
+		--muted: #444444;
+		--line: #999999;
+		--line-soft: #bbbbbb;
+		--accent: #000000;
+		--accent-ink: #000000;
+		--accent-soft: #ffffff;
+		--on-accent: #000000;
+		--mastered: #000000;
+		--known: #555555;
+		--learning: #999999;
+		--unseen: #dddddd;
+		--good: #000000;
+		--almost: #000000;
+		--bad: #000000;
+		--good-soft: #ffffff;
+		--almost-soft: #ffffff;
+		--bad-soft: #ffffff;
+		--on-good: #000000;
+		--on-almost: #000000;
+		--on-bad: #000000;
+		--shadow-lifted: none;
+		color-scheme: light;
+	}
+
+	header,
+	nav,
+	button,
+	dialog,
+	.no-print {
+		display: none !important;
+	}
+
+	main {
+		max-width: none;
+		padding: 0;
+	}
+
+	.card {
+		border: 0;
+		padding: 0;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: var(--text-lg);
+		text-transform: none;
+	}
+
+	h2 {
+		font-size: var(--text-base);
+		break-after: avoid;
+	}
+
+	tr {
+		break-inside: avoid;
+	}
+}
