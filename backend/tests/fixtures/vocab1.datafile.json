@@ -1,0 +1,398 @@
+{
+  "format": "memo.datafile",
+  "version": 1,
+  "id": "df_FIXTURE",
+  "title": "2-1 · 어휘와 표현 · Vocabulary & Expressions",
+  "default_type": "bidirectional",
+  "front_lang": "ko",
+  "back_lang": "en",
+  "source": {
+    "kind": "image",
+    "files": [
+      "raw/vocab1.jpg"
+    ],
+    "page": 6,
+    "context": {
+      "chapter": {
+        "number": "02",
+        "ko": "소개",
+        "en": "Introduction"
+      },
+      "lesson": {
+        "number": "2-1",
+        "ko": "저는 첸이에요",
+        "en": "I'm Chen"
+      }
+    },
+    "import": {
+      "profile": "korean-textbook-vocab",
+      "model": "fixture",
+      "prompt_version": 1,
+      "at": "2026-09-18T00:00:00Z"
+    }
+  },
+  "groups": [
+    {
+      "id": "countries",
+      "label": {
+        "ko": "나라",
+        "en": "Countries"
+      }
+    },
+    {
+      "id": "jobs",
+      "label": {
+        "ko": "직업",
+        "en": "Jobs"
+      }
+    },
+    {
+      "id": "additional",
+      "label": {
+        "ko": "기타 추가 어휘",
+        "en": "Additional Vocabulary"
+      }
+    }
+  ],
+  "notes": [
+    {
+      "id": "n_FIXTURE_001",
+      "type": "bidirectional",
+      "front": "러시아",
+      "back": "Russia",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_002",
+      "type": "bidirectional",
+      "front": "중국",
+      "back": "China",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_003",
+      "type": "bidirectional",
+      "front": "미국",
+      "back": "USA",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_004",
+      "type": "bidirectional",
+      "front": "프랑스",
+      "back": "France",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_005",
+      "type": "bidirectional",
+      "front": "베트남",
+      "back": "Vietnam",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_006",
+      "type": "bidirectional",
+      "front": "한국",
+      "back": "Korea",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_007",
+      "type": "bidirectional",
+      "front": "일본",
+      "back": "Japan",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_008",
+      "type": "bidirectional",
+      "front": "호주",
+      "back": "Australia",
+      "group": "countries",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_009",
+      "type": "bidirectional",
+      "front": "간호사",
+      "back": "nurse",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_010",
+      "type": "bidirectional",
+      "front": "요리사",
+      "back": "chef",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_011",
+      "type": "bidirectional",
+      "front": "디자이너",
+      "back": "designer",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_012",
+      "type": "bidirectional",
+      "front": "크리에이터",
+      "back": "creator",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_013",
+      "type": "bidirectional",
+      "front": "모델",
+      "back": "model",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_014",
+      "type": "bidirectional",
+      "front": "학생",
+      "back": "student",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_015",
+      "type": "bidirectional",
+      "front": "선생님",
+      "back": "teacher",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_016",
+      "type": "bidirectional",
+      "front": "회사원",
+      "back": "office worker",
+      "group": "jobs",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_017",
+      "type": "bidirectional",
+      "front": "나라",
+      "back": "country",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_018",
+      "type": "bidirectional",
+      "front": "아니요",
+      "back": "no",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_019",
+      "type": "bidirectional",
+      "front": "남자",
+      "back": "man",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_020",
+      "type": "bidirectional",
+      "front": "어느",
+      "back": "what, which",
+      "accept": {
+        "back": [
+          "what",
+          "which"
+        ]
+      },
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_021",
+      "type": "bidirectional",
+      "front": "네",
+      "back": "yes",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_022",
+      "type": "bidirectional",
+      "front": "여러분",
+      "back": "everyone",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_023",
+      "type": "bidirectional",
+      "front": "대학생",
+      "back": "university student",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_024",
+      "type": "bidirectional",
+      "front": "유학생",
+      "back": "international student",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_025",
+      "type": "bidirectional",
+      "front": "만나서 반가워요",
+      "back": "Nice to meet you.",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_026",
+      "type": "bidirectional",
+      "front": "이름",
+      "back": "name",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_027",
+      "type": "bidirectional",
+      "front": "뭐",
+      "back": "what",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_028",
+      "type": "bidirectional",
+      "front": "이집트",
+      "back": "Egypt",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_029",
+      "type": "bidirectional",
+      "front": "사람",
+      "back": "people",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_030",
+      "type": "bidirectional",
+      "front": "저",
+      "back": "I/me (honorific)",
+      "accept": {
+        "back": [
+          "I",
+          "me"
+        ]
+      },
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_031",
+      "type": "bidirectional",
+      "front": "-씨",
+      "back": "Mr., Ms.",
+      "accept": {
+        "back": [
+          "Mr.",
+          "Ms."
+        ]
+      },
+      "note": "Ordinarily, when addressing or referring to another person, 씨 is added following their name, but it is not added to their own name.",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    },
+    {
+      "id": "n_FIXTURE_032",
+      "type": "bidirectional",
+      "front": "주부",
+      "back": "homemaker",
+      "group": "additional",
+      "status": "unverified",
+      "confidence": 1.0,
+      "page": 6
+    }
+  ]
+}

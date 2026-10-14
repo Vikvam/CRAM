@@ -1,0 +1,161 @@
+{
+  "format": "memo.patch",
+  "version": 1,
+  "why": "Presentation 1 asks the Korean, to hear it and practise its pronunciation (2026-10-14)",
+  "notes": [
+    {
+      "id": "n_01M4WYK1AXN9N28NP960RYZ94J",
+      "expect": {
+        "front": "No, I'm not Russian. I'm Czech.",
+        "back": "아니요, 러시아 사람이 아니에요. 체코 사람이에요."
+      },
+      "set": {
+        "front": "아니요, 러시아 사람이 아니에요. 체코 사람이에요.",
+        "back": "No, I'm not Russian. I'm Czech."
+      }
+    },
+    {
+      "id": "n_01M4WYK1B46X912BB0N9PVP4K1",
+      "expect": {
+        "front": "What is your name?",
+        "back": "이름이 뭐예요?"
+      },
+      "set": {
+        "front": "이름이 뭐예요?",
+        "back": "What is your name?"
+      }
+    },
+    {
+      "id": "n_01M4WYK1B59VMXVT9MNA8X1CJN",
+      "expect": {
+        "front": "I'm Viki.",
+        "back": "저는 비키예요."
+      },
+      "set": {
+        "front": "저는 비키예요.",
+        "back": "I'm Viki."
+      }
+    },
+    {
+      "id": "n_01M4WYK1B66RW102BAPEVCPYT4",
+      "expect": {
+        "front": "I drink an americano.",
+        "back": "아메리카노를 마셔요."
+      },
+      "set": {
+        "front": "아메리카노를 마셔요.",
+        "back": "I drink an americano."
+      }
+    },
+    {
+      "id": "n_01M4WYK1B66RW102BAPEVCPYT5",
+      "expect": {
+        "front": "Where is the wallet?",
+        "back": "지갑이 어디에 있어요?"
+      },
+      "set": {
+        "front": "지갑이 어디에 있어요?",
+        "back": "Where is the wallet?"
+      }
+    },
+    {
+      "id": "n_01M4WYK1B7TXAZRWJN06S6JJMN",
+      "expect": {
+        "front": "I study at the library.",
+        "back": "도서관에서 공부해요."
+      },
+      "set": {
+        "front": "도서관에서 공부해요.",
+        "back": "I study at the library."
+      }
+    },
+    {
+      "id": "n_01M4WYK1B8A3MPWSQB7DWE1DYQ",
+      "expect": {
+        "front": "What do you drink at the student cafeteria?",
+        "back": "학생 식당에서 뭐를 마셔요?"
+      },
+      "set": {
+        "front": "학생 식당에서 뭐를 마셔요?",
+        "back": "What do you drink at the student cafeteria?"
+      }
+    },
+    {
+      "id": "n_01M4WYK1B9BZH7VDZ0GHMRP1N3",
+      "expect": {
+        "front": "It's under the desk.",
+        "back": "책상 밑에 있어요."
+      },
+      "set": {
+        "front": "책상 밑에 있어요.",
+        "back": "It's under the desk."
+      }
+    },
+    {
+      "id": "n_01M4WYK1B9BZH7VDZ0GHMRP1N4",
+      "expect": {
+        "front": "Everybody, drink water!",
+        "back": "여러분, 물을 마셔요!"
+      },
+      "set": {
+        "front": "여러분, 물을 마셔요!",
+        "back": "Everybody, drink water!"
+      }
+    },
+    {
+      "id": "n_01M4WYK1BAY45V5FAAHJ2XET30",
+      "expect": {
+        "front": "It's a cell phone.",
+        "back": "휴대폰이에요."
+      },
+      "set": {
+        "front": "휴대폰이에요.",
+        "back": "It's a cell phone."
+      }
+    },
+    {
+      "id": "n_01M4WYK1BBAF7MSD4926P9K35A",
+      "expect": {
+        "front": "Who is that person? A singer?",
+        "back": "저 사람은 누구예요? 가수예요?"
+      },
+      "set": {
+        "front": "저 사람은 누구예요? 가수예요?",
+        "back": "Who is that person? A singer?"
+      }
+    },
+    {
+      "id": "n_01M4WYK1BBAF7MSD4926P9K35B",
+      "expect": {
+        "front": "I like apples.",
+        "back": "사과를 좋아해요."
+      },
+      "set": {
+        "front": "사과를 좋아해요.",
+        "back": "I like apples."
+      }
+    },
+    {
+      "id": "n_01M4WYK1BC3BHZ905D9KH7AWA8",
+      "expect": {
+        "front": "What is your job? Are you a homemaker?",
+        "back": "직업이 뭐예요? 주부예요?"
+      },
+      "set": {
+        "front": "직업이 뭐예요? 주부예요?",
+        "back": "What is your job? Are you a homemaker?"
+      }
+    },
+    {
+      "id": "n_01M4WYK1BDGVZTBEAQPRA9P69F",
+      "expect": {
+        "front": "I like the Hanwha Eagles!",
+        "back": "한화 이글스를 좋아해요!"
+      },
+      "set": {
+        "front": "한화 이글스를 좋아해요!",
+        "back": "I like the Hanwha Eagles!"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+# A local importer: one textbook's layout, read into the strict extraction shape.
+#
+# Copy this into backend/importers.local/ (gitignored) to use it, and edit it as
+# you like; `uv run memo importers` lists what loaded. The format is described in
+# backend/src/memo/importers/local.py and docs/development.md.
+
+kind = "extraction"
+name = "korean-textbook-vocab"
+description = "A Korean textbook page whose vocabulary table prints two Korean/English pairs per row, under bilingual group headings."
+default_type = "bidirectional"
+front_lang = "ko"
+back_lang = "en"
+prompt_version = 1
+
+prompt = '''
+You read a photographed page of a Korean textbook and extract its vocabulary.
+
+Layout you will see:
+- Vocabulary tables print TWO Korean/English pairs per row: columns 1-2 are one pair,
+  columns 3-4 are a second, separate pair. Read left pair, then right pair, row by row.
+- Headings above a table (e.g. "나라 Countries") are groups. Bilingual: Korean then English.
+- The page may show a chapter number and title, and a lesson number and title, above the table.
+- Superscript digits mark footnotes printed at the bottom; attach the footnote text to that
+  item's `note` and remove the marker from the term itself.
+
+Rules:
+- `front` is the Korean, `back` is the English, exactly as printed.
+- Split a multi-meaning English gloss into `back_accepted`: "what, which" → ["what", "which"];
+  "I/me (honorific)" → ["I", "me"]. Leave `back` itself untouched.
+- Never invent, translate or complete anything that is not printed on the page.
+- The photo may be skewed and text from the facing page may show through. Ignore anything
+  that is not part of this page, and put rows you cannot read into `unreadable`.
+- Grammar tables of the form "N이에요/예요" are not vocabulary. Skip them.
+'''
+
+# JSON rather than TOML, since TOML has no null.
+example = '''
+{
+  "title_native": "어휘와 표현",
+  "title_translated": "Vocabulary & Expressions",
+  "context": [
+    {
+      "kind": "lesson",
+      "number": "1-1",
+      "native": "안녕하세요",
+      "translated": "Hello"
+    }
+  ],
+  "groups": [
+    {
+      "key": "greetings",
+      "label_native": "인사",
+      "label_translated": "Greetings"
+    }
+  ],
+  "items": [
+    {
+      "group": "greetings",
+      "front": "안녕하세요",
+      "back": "hello, hi",
+      "front_accepted": [],
+      "back_accepted": [
+        "hello",
+        "hi"
+      ],
+      "note": null,
+      "confidence": "high"
+    }
+  ],
+  "unreadable": []
+}
+'''

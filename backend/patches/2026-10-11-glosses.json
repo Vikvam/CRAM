@@ -1,0 +1,320 @@
+{
+  "format": "memo.patch",
+  "version": 1,
+  "why": "Glosses that collide in the reverse direction (2026-10-11)",
+  "notes": [
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF722X",
+      "expect": {
+        "front": "이게",
+        "back": "this"
+      },
+      "set": {
+        "back": "this + 이 (subject)",
+        "accept": {
+          "back": [
+            "this"
+          ]
+        },
+        "note": "이것이 → 이게"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF722Y",
+      "expect": {
+        "front": "이건",
+        "back": "this"
+      },
+      "set": {
+        "back": "this + 은 (topic)",
+        "accept": {
+          "back": [
+            "this"
+          ]
+        },
+        "note": "이것은 → 이건"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF722Z",
+      "expect": {
+        "front": "그게",
+        "back": "that"
+      },
+      "set": {
+        "back": "that + 이 (subject)",
+        "accept": {
+          "back": [
+            "that"
+          ]
+        },
+        "note": "그것이 → 그게"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7230",
+      "expect": {
+        "front": "그건",
+        "back": "that"
+      },
+      "set": {
+        "back": "that + 은 (topic)",
+        "accept": {
+          "back": [
+            "that"
+          ]
+        },
+        "note": "그것은 → 그건"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7W",
+      "expect": {
+        "front": "저것",
+        "back": "that (over there)",
+        "accept": {
+          "back": [
+            "that",
+            "that over there"
+          ]
+        }
+      },
+      "set": {
+        "back": "that over there",
+        "accept": {
+          "back": [
+            "that",
+            "that (over there)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7231",
+      "expect": {
+        "front": "저게",
+        "back": "that (over there)",
+        "accept": {
+          "back": [
+            "that"
+          ]
+        }
+      },
+      "set": {
+        "back": "that over there + 이 (subject)",
+        "accept": {
+          "back": [
+            "that",
+            "that over there",
+            "that (over there)"
+          ]
+        },
+        "note": "저것이 → 저게"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7232",
+      "expect": {
+        "front": "저건",
+        "back": "that (over there)",
+        "accept": {
+          "back": [
+            "that"
+          ]
+        }
+      },
+      "set": {
+        "back": "that over there + 은 (topic)",
+        "accept": {
+          "back": [
+            "that",
+            "that over there",
+            "that (over there)"
+          ]
+        },
+        "note": "저것은 → 저건"
+      }
+    },
+    {
+      "id": "n_01M4B4785DYJD6FTQS4AJTPM5A",
+      "expect": {
+        "front": "누가",
+        "back": "who"
+      },
+      "set": {
+        "back": "who + 가 (subject)",
+        "accept": {
+          "back": [
+            "who"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0J",
+      "expect": {
+        "front": "교실",
+        "back": "classroom",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0M",
+      "expect": {
+        "front": "닫다",
+        "back": "to close",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0R",
+      "expect": {
+        "front": "만나다",
+        "back": "to meet",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE7",
+      "expect": {
+        "front": "배우다",
+        "back": "to learn",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE4",
+      "expect": {
+        "front": "사다",
+        "back": "to buy",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPG",
+      "expect": {
+        "front": "학교",
+        "back": "school",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF722W",
+      "expect": {
+        "front": "누구",
+        "back": "who",
+        "suspended": null
+      },
+      "set": {
+        "suspended": true
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXW7",
+      "expect": {
+        "front": "뭐",
+        "accept": null
+      },
+      "set": {
+        "accept": {
+          "front": [
+            "무엇"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7Z",
+      "expect": {
+        "front": "무엇",
+        "accept": null
+      },
+      "set": {
+        "accept": {
+          "front": [
+            "뭐"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M4CMBSQCETNYXAASQ62NZKXY",
+      "expect": {
+        "front": "밑",
+        "accept": {
+          "back": [
+            "under",
+            "below"
+          ]
+        }
+      },
+      "set": {
+        "accept": {
+          "back": [
+            "under",
+            "below"
+          ],
+          "front": [
+            "아래"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M4CMBSQA3MEXFSBECGC9VF74",
+      "expect": {
+        "front": "공",
+        "accept": {
+          "back": [
+            "0",
+            "zero"
+          ]
+        }
+      },
+      "set": {
+        "accept": {
+          "back": [
+            "0",
+            "zero"
+          ],
+          "front": [
+            "영"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPJ",
+      "expect": {
+        "front": "회사",
+        "back": "office"
+      },
+      "set": {
+        "back": "company",
+        "accept": {
+          "back": [
+            "office"
+          ]
+        }
+      }
+    }
+  ]
+}

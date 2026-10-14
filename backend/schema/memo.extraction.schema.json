@@ -1,0 +1,252 @@
+{
+  "$defs": {
+    "Confidence": {
+      "description": "A word, not a number: models report words far more reliably.",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "ExtractedContext": {
+      "additionalProperties": false,
+      "description": "One level of hierarchy printed on the page (chapter, lesson, section).",
+      "properties": {
+        "kind": {
+          "description": "chapter | lesson | section | unit — whatever the page calls it",
+          "title": "Kind",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Printed number such as \"02\" or \"2-1\"; null if none",
+          "title": "Number"
+        },
+        "native": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The heading in the source language; null if absent",
+          "title": "Native"
+        },
+        "translated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The heading in English; null if absent",
+          "title": "Translated"
+        }
+      },
+      "required": [
+        "kind",
+        "number",
+        "native",
+        "translated"
+      ],
+      "title": "ExtractedContext",
+      "type": "object"
+    },
+    "ExtractedGroup": {
+      "additionalProperties": false,
+      "description": "A heading above a block of items (``나라 Countries``).",
+      "properties": {
+        "key": {
+          "description": "Short lowercase ascii id, unique in this page, e.g. 'countries'",
+          "title": "Key",
+          "type": "string"
+        },
+        "label_native": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Heading in the source language; null if absent",
+          "title": "Label Native"
+        },
+        "label_translated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Heading in English; null if absent",
+          "title": "Label Translated"
+        }
+      },
+      "required": [
+        "key",
+        "label_native",
+        "label_translated"
+      ],
+      "title": "ExtractedGroup",
+      "type": "object"
+    },
+    "ExtractedItem": {
+      "additionalProperties": false,
+      "description": "One vocabulary pair / question-answer pair found on the page.",
+      "properties": {
+        "group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "key of the group this item sits under; null if none",
+          "title": "Group"
+        },
+        "front": {
+          "description": "The prompt side exactly as printed, without footnote markers",
+          "title": "Front",
+          "type": "string"
+        },
+        "back": {
+          "description": "The answer side exactly as printed",
+          "title": "Back",
+          "type": "string"
+        },
+        "front_accepted": {
+          "description": "Other spellings that mean the same as `front` and should count as correct when typed. Empty list if there are none. Never invent variants.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Front Accepted",
+          "type": "array"
+        },
+        "back_accepted": {
+          "description": "Each separate meaning of `back` as a standalone answer: \"what, which\" gives [\"what\", \"which\"]; \"I/me (honorific)\" gives [\"I\", \"me\"]. Empty list if `back` is a single meaning.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Back Accepted",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Footnote or usage note attached to this item; null if none",
+          "title": "Note"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence",
+          "description": "How sure you are that this row was read correctly"
+        }
+      },
+      "required": [
+        "group",
+        "front",
+        "back",
+        "front_accepted",
+        "back_accepted",
+        "note",
+        "confidence"
+      ],
+      "title": "ExtractedItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Everything one page yields. The adapter turns this into a data file.",
+  "properties": {
+    "title_native": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Title of the section this page belongs to; else null",
+      "title": "Title Native"
+    },
+    "title_translated": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "English title; else null",
+      "title": "Title Translated"
+    },
+    "context": {
+      "description": "Hierarchy printed on the page, outermost first. Empty list if none is visible.",
+      "items": {
+        "$ref": "#/$defs/ExtractedContext"
+      },
+      "title": "Context",
+      "type": "array"
+    },
+    "groups": {
+      "description": "Headings found; empty list if the page has none",
+      "items": {
+        "$ref": "#/$defs/ExtractedGroup"
+      },
+      "title": "Groups",
+      "type": "array"
+    },
+    "items": {
+      "description": "Every pair on the page, in reading order",
+      "items": {
+        "$ref": "#/$defs/ExtractedItem"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "unreadable": {
+      "description": "Rows you could not read confidently, quoted as best you can. Empty list if none.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Unreadable",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title_native",
+    "title_translated",
+    "context",
+    "groups",
+    "items",
+    "unreadable"
+  ],
+  "title": "ExtractionResult",
+  "type": "object"
+}

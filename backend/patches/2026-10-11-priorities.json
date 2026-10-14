@@ -1,0 +1,777 @@
+{
+  "format": "memo.patch",
+  "version": 1,
+  "why": "Crucial and high marks from the user's two word lists (2026-10-11)",
+  "notes": [
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKW",
+      "expect": {
+        "front": "어느",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7Z",
+      "expect": {
+        "front": "무엇",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXW7",
+      "expect": {
+        "front": "뭐",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE0",
+      "expect": {
+        "front": "어디",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7X",
+      "expect": {
+        "front": "누구",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF722W",
+      "expect": {
+        "front": "누구",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4B4785DYJD6FTQS4AJTPM5A",
+      "expect": {
+        "front": "누가",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7T",
+      "expect": {
+        "front": "이것",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7V",
+      "expect": {
+        "front": "그것",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7W",
+      "expect": {
+        "front": "저것",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPK",
+      "expect": {
+        "front": "여기",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPM",
+      "expect": {
+        "front": "저기",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTDZ",
+      "expect": {
+        "front": "거기",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKE",
+      "expect": {
+        "front": "한국",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKD",
+      "expect": {
+        "front": "베트남",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKC",
+      "expect": {
+        "front": "프랑스",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXW9",
+      "expect": {
+        "front": "사람",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKH",
+      "expect": {
+        "front": "간호사",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXW3",
+      "expect": {
+        "front": "대학생",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT84",
+      "expect": {
+        "front": "친구",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXN",
+      "expect": {
+        "front": "책상",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXE",
+      "expect": {
+        "front": "가방",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7S",
+      "expect": {
+        "front": "휴대폰",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXK",
+      "expect": {
+        "front": "책",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPG",
+      "expect": {
+        "front": "학교",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMJQ1TVQRNWVK1HJQ348X3",
+      "expect": {
+        "front": "학교",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPC",
+      "expect": {
+        "front": "카페",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPF",
+      "expect": {
+        "front": "영화관",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPD",
+      "expect": {
+        "front": "식당",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPH",
+      "expect": {
+        "front": "집",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMBSQCETNYXAASQ62NZKY3",
+      "expect": {
+        "front": "위",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMBSQCETNYXAASQ62NZKXZ",
+      "expect": {
+        "front": "앞",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7N",
+      "expect": {
+        "front": "커피",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXF",
+      "expect": {
+        "front": "주스",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT8A",
+      "expect": {
+        "front": "한국어",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0R",
+      "expect": {
+        "front": "만나다",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMJQ1TVQRNWVK1HJQ348XB",
+      "expect": {
+        "front": "만나다",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE3",
+      "expect": {
+        "front": "마시다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE2",
+      "expect": {
+        "front": "보다",
+        "priority": null
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE8",
+      "expect": {
+        "front": "읽다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE7",
+      "expect": {
+        "front": "배우다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMJQ1TVQRNWVK1HJQ348XD",
+      "expect": {
+        "front": "배우다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE1",
+      "expect": {
+        "front": "공부를 하다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMBSQD6092FRDW3NDB0CYN",
+      "expect": {
+        "front": "있다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M4CMBSQD6092FRDW3NDB0CYD",
+      "expect": {
+        "front": "없다",
+        "priority": "high"
+      },
+      "set": {
+        "priority": "crucial"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKF",
+      "expect": {
+        "front": "일본",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKG",
+      "expect": {
+        "front": "호주",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKP",
+      "expect": {
+        "front": "학생",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKQ",
+      "expect": {
+        "front": "선생님",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKR",
+      "expect": {
+        "front": "회사원",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKJ",
+      "expect": {
+        "front": "요리사",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKN",
+      "expect": {
+        "front": "모델",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKK",
+      "expect": {
+        "front": "디자이너",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9BK3TKM1ZE95MZNYKM",
+      "expect": {
+        "front": "크리에이터",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXWC",
+      "expect": {
+        "front": "주부",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M33PYZ9CRZSZB3SP28WBZXW4",
+      "expect": {
+        "front": "유학생",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7R",
+      "expect": {
+        "front": "의자",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXG",
+      "expect": {
+        "front": "공책",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7M",
+      "expect": {
+        "front": "볼펜",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT89",
+      "expect": {
+        "front": "연필",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXH",
+      "expect": {
+        "front": "지갑",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK81G5K0CPPT90K2KT7P",
+      "expect": {
+        "front": "여권",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF723B",
+      "expect": {
+        "front": "우산",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7233",
+      "expect": {
+        "front": "모자",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7239",
+      "expect": {
+        "front": "안경",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF723C",
+      "expect": {
+        "front": "휴지",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXM",
+      "expect": {
+        "front": "물",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4B4785EA9NNTTGSRDSF7235",
+      "expect": {
+        "front": "빵",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M3V1SK80EP02RKDDYTXZNHXJ",
+      "expect": {
+        "front": "꽃",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPB",
+      "expect": {
+        "front": "도서관",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPE",
+      "expect": {
+        "front": "편의점",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1GSJ7ERMQ1PEECREPJ",
+      "expect": {
+        "front": "회사",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0J",
+      "expect": {
+        "front": "교실",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMJQ1SPGQKRQ64D969DP0K",
+      "expect": {
+        "front": "교실",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1HWV8GS8ZWPEH6MTE6",
+      "expect": {
+        "front": "일을 하다",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMGA1JMAJTVP3QZEFSKB0K",
+      "expect": {
+        "front": "산책(을) 하다",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    },
+    {
+      "id": "n_01M4CMBSQD6092FRDW3NDB0CYH",
+      "expect": {
+        "front": "오다",
+        "priority": null
+      },
+      "set": {
+        "priority": "high"
+      }
+    }
+  ]
+}

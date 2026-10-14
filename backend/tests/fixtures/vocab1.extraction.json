@@ -1,0 +1,335 @@
+{
+  "title_native": "어휘와 표현",
+  "title_translated": "Vocabulary & Expressions",
+  "context": [
+    {
+      "kind": "chapter",
+      "number": "02",
+      "native": "소개",
+      "translated": "Introduction"
+    },
+    {
+      "kind": "lesson",
+      "number": "2-1",
+      "native": "저는 첸이에요",
+      "translated": "I'm Chen"
+    }
+  ],
+  "groups": [
+    {
+      "key": "countries",
+      "label_native": "나라",
+      "label_translated": "Countries"
+    },
+    {
+      "key": "jobs",
+      "label_native": "직업",
+      "label_translated": "Jobs"
+    },
+    {
+      "key": "additional",
+      "label_native": "기타 추가 어휘",
+      "label_translated": "Additional Vocabulary"
+    }
+  ],
+  "items": [
+    {
+      "group": "countries",
+      "front": "러시아",
+      "back": "Russia",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "중국",
+      "back": "China",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "미국",
+      "back": "USA",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "프랑스",
+      "back": "France",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "베트남",
+      "back": "Vietnam",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "한국",
+      "back": "Korea",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "일본",
+      "back": "Japan",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "countries",
+      "front": "호주",
+      "back": "Australia",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "간호사",
+      "back": "nurse",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "요리사",
+      "back": "chef",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "디자이너",
+      "back": "designer",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "크리에이터",
+      "back": "creator",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "모델",
+      "back": "model",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "학생",
+      "back": "student",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "선생님",
+      "back": "teacher",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "jobs",
+      "front": "회사원",
+      "back": "office worker",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "나라",
+      "back": "country",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "아니요",
+      "back": "no",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "남자",
+      "back": "man",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "어느",
+      "back": "what, which",
+      "front_accepted": [],
+      "back_accepted": [
+        "what",
+        "which"
+      ],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "네",
+      "back": "yes",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "여러분",
+      "back": "everyone",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "대학생",
+      "back": "university student",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "유학생",
+      "back": "international student",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "만나서 반가워요",
+      "back": "Nice to meet you.",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "이름",
+      "back": "name",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "뭐",
+      "back": "what",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "이집트",
+      "back": "Egypt",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "사람",
+      "back": "people",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "저",
+      "back": "I/me (honorific)",
+      "front_accepted": [],
+      "back_accepted": [
+        "I",
+        "me"
+      ],
+      "note": null,
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "-씨",
+      "back": "Mr., Ms.",
+      "front_accepted": [],
+      "back_accepted": [
+        "Mr.",
+        "Ms."
+      ],
+      "note": "Ordinarily, when addressing or referring to another person, 씨 is added following their name, but it is not added to their own name.",
+      "confidence": "high"
+    },
+    {
+      "group": "additional",
+      "front": "주부",
+      "back": "homemaker",
+      "front_accepted": [],
+      "back_accepted": [],
+      "note": null,
+      "confidence": "high"
+    }
+  ],
+  "unreadable": []
+}
